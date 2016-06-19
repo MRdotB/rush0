@@ -9,10 +9,11 @@ if ($_POST["method"] == "create") {
 	create_user($_POST["name"], $_POST["password"], 0);
 	header("Location: login.php");
 } else if ($_POST["method"] == "edit" && $_POST["old_name"] && $_POST["new_name"] && $_POST["acl"] != "") {
+
 	edit_user($_POST["old_name"], $_POST["new_name"], $_POST["acl"]);
 	header("Location: dashboard.php?content=users");
 } else if ($_GET["method"] == "delete" && $_GET["name"]) {
-	delete_user($_GET["name"]);
+	delete_user(htmlspecialchars($_GET["name"], ENT_QUOTES, 'UTF-8'));
 	header("Location: dashboard.php?content=users");
 } else if ($_POST["method"] == "login" && $_POST["name"] && $_POST["password"]) {
 	if (connect($_POST["name"], $_POST["password"])) {
