@@ -27,15 +27,14 @@
 				<?php 
 					include("data/get.php");
 					$users = get_users();
-					print_r($users);
 					foreach ($users as $user) {
-						if ($user["acl"] == 0) {
-							echo "<tr>";
-							echo "<th>" . $user["name"] . "</th>";
-							echo "<th>" . $user["acl"] . "</th>";
-						echo "<th><a class=\"button\" href=\"?content=users-edit&name=" . $user["name"] . "\">edit</a></th>";
+						if ($_SESSION["name"] != $user["name"]) {
+						echo "<tr>";
+						echo "<th>" . $user["name"] . "</th>";
+						echo "<th>" . $user["acl"] . "</th>";
+						echo "<th><a class=\"button\" href=\"?content=users-edit&name=" . $user["name"] . "&acl=" . $user["acl"] . "\">edit</a></th>";
 						echo "<th><a class=\"button\" href=\"user_controller.php?method=delete&name=" . $user["name"] . "\">delete</a></th>";
-							echo "</tr>";
+						echo "</tr>";
 						}
 					}
 				?>
@@ -54,6 +53,7 @@
 	<li><a href="?content=products" class="iconicfill-movie">Products</a></li>
 	<li><a href="?content=users" class="iconicfill-user active">Users</a></li>
 	<li><a href="?content=category" class="iconicfill-cloud">Category</a></li>
+	<li><a href="logout.php" class="iconicfill-logout">Logout</a></li>
 	</ul>
 	</aside>
 	</div>

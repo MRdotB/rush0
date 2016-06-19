@@ -1,0 +1,164 @@
+@import url(http://weloveiconfonts.com/api/?family=iconicfill);
+[class*="iconicfill-"]::before {
+  font-family: 'IconicFill', sans-serif;
+  font-size: 1.2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.dashboard {
+  height: 100%;
+}
+
+html,
+body,
+input,
+textarea {
+  font: 300 1rem "Ubuntu", Helvetica, Verdana, sans-serif;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+h1 {
+  font: 700 1.75rem "Ubuntu", Helvetica, Verdana, sans-serif;
+  border-bottom: 0.5rem solid #2c3e50;
+  margin: 0 0 2rem 0;
+}
+
+h2 {
+  font: 700 1.5rem "Ubuntu", Helvetica, Verdana, sans-serif;
+  margin: 0 0 1rem 0;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+ul {
+	list-style: none;
+}
+
+.dashboard {
+  font: 300 1rem "Ubuntu", Helvetica, Verdana, sans-serif;
+  display: flex;
+  flex-flow: row wrap;
+  height: auto;
+}
+
+aside {
+  background: #2c3e50;
+  flex: 2 1 0%;
+  order: 1;
+}
+aside li,
+aside .search {
+  display: block;
+  color: #ecf0f1;
+  text-decoration: none;
+  padding: 1rem;
+  border-bottom: 1px solid #34495e;
+  transition: background 0.15s ease;
+}
+aside li::before,
+aside .search::before {
+  display: inline-block;
+  width: 1.5rem;
+}
+aside .search input {
+  width: 80%;
+}
+
+main {
+  background: #ecf0f1;
+  flex: 6 1 0%;
+  order: 2;
+  padding: 1rem 0 1rem 1rem;
+}
+main .overview {
+  min-height: 100vh;
+}
+main .overview .widget-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+main .overview .widget-container .widget {
+	background: #bdc3c7;
+	max-width: 500px;
+	display: inline-block;
+	margin:10px 0 0 2%;
+	flex-grow: 1;
+	width: calc(100% * (1/4) - 10px - 1px);
+}
+main .overview .widget-container .widget header {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 1rem;
+}
+main .overview .widget-container .widget header h3::before {
+  display: inline-block;
+  width: 1.5rem;
+}
+
+main .overview .widget-container .widget .content img{
+	width: 100%;
+}
+main .overview .widget-container .widget .content {
+  padding: 1rem;
+}
+main .overview .widget-container .widget .content li {
+  list-style-type: square;
+  margin: 0 0 0 1rem;
+}
+main .overview .widget-container .widget .content .ok::before {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background: #27ae60;
+  border-radius: 50%;
+  margin: 0 1rem 0 0;
+}
+main footer p {
+  text-align: right;
+  font-size: .85rem;
+}
+.button {
+	text-decoration:none;
+	color:#333333;
+	font-size:1em;
+	font-weight:bold;
+	padding:0 15px;
+	line-height:32px;
+	height: auto;
+	display:inline-block;
+	text-align:center;
+	background-color:#DDDDDD;
+	margin-bottom: 20px;
+}
+.hidden {
+	display: none;
+}
+.total {
+	border-bottom: none;
+}
+
+aside a {
+	color: white;
+	text-decoration: none;
+	border-bottom: solid 1px white;
+}
+
+.basket {
+	color: white;
+}
+

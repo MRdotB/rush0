@@ -5,7 +5,6 @@ function connect($login, $password) {
 		return ;
 	}
 	$users = get_users();
-	print_r($users);
 	$hash = hash('whirlpool', $password);
 	foreach ($users as $user) {
 		if ($user["name"] == $login) {

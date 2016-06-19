@@ -59,7 +59,7 @@ function create_category($name) {
 		return ;
 	}
 	$new_cat = array();
-	$new_cat["name"] = $name;
+	$new_cat["name"] = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
 	$category = get_category();
 	foreach ($category as $cat) {
 		if ($cat["name"] == $name) {

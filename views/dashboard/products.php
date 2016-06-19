@@ -30,7 +30,6 @@
 				<?php 
 					include("data/get.php");
 					$products = get_products();
-					print_r($products);
 					foreach ($products as $product) {
 						echo "<tr>";
 						echo "<th>" . $product["name"] . "</th>";
@@ -57,6 +56,7 @@
 	<li><a href="?content=products" class="iconicfill-movie active">Products</a></li>
 	<li><a href="?content=users" class="iconicfill-user">Users</a></li>
 	<li><a href="?content=category" class="iconicfill-cloud">Category</a></li>
+	<li><a href="logout.php" class="iconicfill-logout">Logout</a></li>
 	</ul>
 	</aside>
 	</div>

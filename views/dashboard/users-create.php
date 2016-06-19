@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,16 +10,16 @@
 <div class="Login">
 	<main>
 		<div class="overview">
-			<h1>Login</h1>
+			<h1>Creer un compte</h1>
 			<h2>Overview</h2>
 			<div class="widget-container">
 			<div class="widget">
 			<header>
-				<h3 class="iconicfill-user">Login</h3>
+				<h3 class="iconicfill-user">Creer un compte</h3>
 			</header>
 			<div class="content">
 				<form action="user_controller.php" method="post">
-				<input class="hidden" id="name" name="method" value="login" type="text">
+				<input class="hidden" id="name" name="method" value="create" type="text">
 				<label for="name">Login:</label>
 				<input id="name" name="name" type="text"><br>
 				<br>
@@ -26,13 +27,10 @@
 				<input id="password" name="password" type="password">
 				<br>
 				<br>
-				<input type="submit" value="Login">
+				<input type="submit" value="Creer un compte">
 				</form>
 				<br>
 				<br>
-				<a href="create.php">Create an account</a>
-				<br>
-				<a href="index.php">Continue as guest</a>
 			</div>
 			</div>
 			</div>

@@ -22,7 +22,10 @@
 				<input class="hidden" id="name" name="method" value="edit" type="text">
 				<input readonly id="oldname" name="old_name" type="text" value="<?php echo $_GET["name"]; ?>"><br>
 				<label for="name">New name:</label>
-				<input id="newname" name="new_name" type="text">
+				<input id="newname" name="new_name" type="text"><br>
+				<label for="name">Acl 0 for normal 1 for admin</label>
+				<input id="acl" name="acl" type="number" value="<?php echo $_GET["acl"]; ?>">
+				<br>
 				<input type="submit" value="Edit">
 				</form>
 
@@ -40,6 +43,7 @@
 	<li><a href="?content=products" class="iconicfill-movie">Products</a></li>
 	<li><a href="?content=users" class="iconicfill-user active">Users</a></li>
 	<li><a href="?content=category" class="iconicfill-cloud">Category</a></li>
+	<li><a href="logout.php" class="iconicfill-logout">Logout</a></li>
 	</ul>
 	</aside>
 	</div>

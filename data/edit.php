@@ -1,10 +1,15 @@
 <?php
 
-function edit_user($name, $new_name) {
+function edit_user($name, $new_name, $acl) {
+	if ($acl != 1 && $acl != 0) {
+		return ;
+	}
+	$new_name = htmlspecialchars($new_name, ENT_QUOTES, 'UTF-8');
 	$users = get_users();
 	for ($i = 0; $i < count($users); $i++) {
 		if ($users[$i]["name"] == $name) {
 			$users[$i]["name"] = $new_name;
+			$users[$i]["acl"] = $acl;
 		}
 	}
 	file_put_contents("data/users", serialize($users));

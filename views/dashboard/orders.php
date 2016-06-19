@@ -27,7 +27,6 @@
 				<?php 
 					include("data/get.php");
 					$orders = get_orders();
-					print_r($orders);
 					foreach ($orders as $order) {
 						echo "<tr>";
 						echo "<th>" . $order["user"] . "</th>";
@@ -52,6 +51,7 @@
 	<li><a href="?content=products" class="iconicfill-movie">Products</a></li>
 	<li><a href="?content=users" class="iconicfill-user">Users</a></li>
 	<li><a href="?content=category" class="iconicfill-cloud">Category</a></li>
+	<li><a href="logout.php" class="iconicfill-logout">Logout</a></li>
 	</ul>
 	</aside>
 	</div>
