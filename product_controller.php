@@ -9,7 +9,7 @@ if ($_POST["method"] == "create") {
 	create_product($_POST["name"], $_POST["price"], implode(";", array_values($_POST["category"])), $_POST["img_link"]);
 	header("Location: dashboard.php?content=products");
 } else if ($_POST["method"] == "edit") {
-	edit_product($_POST["name"], $_POST["price"], $_POST["category"], $_POST["img_link"]);
+	edit_product($_POST["name"], $_POST["price"], implode(";", array_values($_POST["category"])), $_POST["img_link"]);
 	header("Location: dashboard.php?content=products");
 } else if ($_GET["method"] == "delete" && $_GET["name"]) {
 	delete_product($_GET["name"]);

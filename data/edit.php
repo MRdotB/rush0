@@ -11,15 +11,24 @@ function edit_user($name) {
 	file_put_contents("data/users", serialize($users));
 }
 
-function edit_product($name) {
+function edit_product($name, $price, $category, $img_link) {
+	if ($name == "" || $price == "" || $category == "" || $img_link == "") {
+		echo "ERROR";
+		return ;
+	}
+	$new_product = array();
+	$new_product["name"] = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+	$new_product["price"] = htmlspecialchars($price, ENT_QUOTES, 'UTF-8');
+	$new_product["category"] = explode(";", htmlspecialchars($category, ENT_QUOTES, 'UTF-8'));
+	$new_product["img_link"] = htmlspecialchars($img_link, ENT_QUOTES, 'UTF-8');
 	$products = get_products();
+
 	for ($i = 0; $i < count($products); $i++) {
 		if ($products[$i]["name"] == $name) {
-			array_splice($products, $i, $i);
+			$products[$i] = $new_product;
 		}
 	}
 	file_put_contents("data/products", serialize($products));
-
 }
 
 function edit_category($name, $new_name) {

@@ -37,7 +37,7 @@
 						echo "<th>" . $product["price"] . "$</th>";
 						echo "<th>" . implode(";", $product["category"]) . "</th>";
 						echo "<th><img src=\"" . $product["img_link"] . "\"\\></th>";
-						echo "<th><a class=\"button\" href=\"?content=products-edit&name=" . $product["name"] . "\">edit</a></th>";
+						echo "<th><a class=\"button\" href=\"?content=products-edit&name=" . $product["name"] . "&price=" . $product["price"] ."&img_link=" . $product["img_link"] . "&category=" . implode(";", array_values($product["category"])) ."\">edit</a></th>";
 						echo "<th><a class=\"button\" href=\"product_controller.php?method=delete&name=" . $product["name"] . "\">delete</a></th>";
 						echo "</tr>";
 					}
