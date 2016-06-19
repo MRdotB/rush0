@@ -19,6 +19,8 @@ else if ($_GET["content"] == "products") {
 // User
 else if ($_GET["content"] == "users") {
 	include("views/dashboard/users.php");
+} else if ($_GET["content"] == "users-edit") {
+	include("views/dashboard/users-edit.php");
 } 
 // Category
 else if ($_GET["content"] == "category") {
@@ -29,6 +31,6 @@ else if ($_GET["content"] == "category") {
 	include("views/dashboard/category-edit.php");
 } else {
 	//page 404
-	include("views/dashboard/orders-create.php");
+	echo "404";
 }
 ?>

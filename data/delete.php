@@ -1,12 +1,12 @@
 <?php
 function delete_user($name) {
 	$users = get_users();
-	print_r($users);
 	for ($i = 0; $i < count($users); $i++) {
 		if ($users[$i]["name"] == $name) {
-			array_splice($users, $i, $i);
+			unset($users[$i]);
 		}
 	}
+	$users = array_values($users);
 	file_put_contents("data/users", serialize($users));
 }
 

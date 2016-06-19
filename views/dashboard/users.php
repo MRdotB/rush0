@@ -33,7 +33,7 @@
 							echo "<tr>";
 							echo "<th>" . $user["name"] . "</th>";
 							echo "<th>" . $user["acl"] . "</th>";
-						echo "<th><a class=\"button\" href=\"user_controller.php?method=delete&name=" . $user["name"] . "\">edit</a></th>";
+						echo "<th><a class=\"button\" href=\"?content=users-edit&name=" . $user["name"] . "\">edit</a></th>";
 						echo "<th><a class=\"button\" href=\"user_controller.php?method=delete&name=" . $user["name"] . "\">delete</a></th>";
 							echo "</tr>";
 						}

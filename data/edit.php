@@ -1,11 +1,10 @@
 <?php
 
-function edit_user($name) {
+function edit_user($name, $new_name) {
 	$users = get_users();
-	print_r($users);
 	for ($i = 0; $i < count($users); $i++) {
 		if ($users[$i]["name"] == $name) {
-			array_splice($users, $i, $i);
+			$users[$i]["name"] = $new_name;
 		}
 	}
 	file_put_contents("data/users", serialize($users));
@@ -13,7 +12,6 @@ function edit_user($name) {
 
 function edit_product($name, $price, $category, $img_link) {
 	if ($name == "" || $price == "" || $category == "" || $img_link == "") {
-		echo "ERROR";
 		return ;
 	}
 	$new_product = array();
