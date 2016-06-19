@@ -21,7 +21,8 @@ function create_user($name, $pass, $acl) {
 }
 
 function create_product($name, $price, $category, $img_link) {
-	if (!$name || !$price || !$category || !$img_link) {
+	if ($name == "" || $price == "" || $category == "" || $img_link == "") {
+		echo "ERROR";
 		return ;
 	}
 	$new_product = array();

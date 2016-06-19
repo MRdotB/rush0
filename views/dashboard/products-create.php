@@ -17,32 +17,32 @@
 				<h3 class="iconicfill-bars">Products</h3>
 			</header>
 			<div class="content">
-				<a class="button" href="?content=products-create">Create a product</a>
-				<table>
-				  <colgroup span="4"></colgroup>
-				  <tr>
-					<th>Name</th>
-					<th>Price</th>
-					<th>Category</th>
-					<th>img</th>
-					<th>action</th>
-					<th>action</th>
-				<?php 
+				<form action="product_controller.php" method="post">
+				<input class="hidden" id="name" name="method" value="create" type="text">
+				<label for="name">Name:</label>
+				<input id="name" name="name" type="text"><br>
+				<br>
+				<label for="price">Price ($):</label>
+				<input id="price" name="price" type="number"><br>
+				<br>
+				<label for="name">Img_link:</label>
+				<input id="img_link" name="img_link" type="text"><br>
+				<br>
+				<fieldset>
+					<legend>category</legend>
+					<?php 
 					include("data/get.php");
-					$products = get_products();
-					print_r($products);
-					foreach ($products as $product) {
-						echo "<tr>";
-						echo "<th>" . $product["name"] . "</th>";
-						echo "<th>" . $product["price"] . "$</th>";
-						echo "<th>" . implode(";", $product["category"]) . "</th>";
-						echo "<th><img src=\"" . $product["img_link"] . "\"\\></th>";
-						echo "<th><a class=\"button\" href=\"?content=products-edit&name=" . $product["name"] . "\">edit</a></th>";
-						echo "<th><a class=\"button\" href=\"product_controller.php?method=delete&name=" . $product["name"] . "\">delete</a></th>";
-						echo "</tr>";
+					$category = get_category();
+					$i = 0;
+					foreach ($category as $cat) {
+						echo '<label><input type="checkbox" name="category[' . $i. ']" value="' . $cat["name"] . '">' . $cat["name"] . '</label><br>';
+						$i++;
 					}
-				?>
-				</table>
+					?>
+				</fieldset>
+				<br>
+				<input type="submit" value="Creer">
+				</form>
 			</div>
 			</div>
 			</div>

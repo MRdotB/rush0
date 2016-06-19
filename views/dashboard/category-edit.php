@@ -17,27 +17,14 @@
 				<h3 class="iconicfill-bars">Category</h3>
 			</header>
 			<div class="content">
-				<a class="button" href="?content=category-create">Create a category</a>
-				<br>
-				<table>
-				  <colgroup span="4"></colgroup>
-				  <tr>
-					<th>Name</th>
-					<th>Action</th>
-					<th>Action</th>
-				<?php 
-					include("data/get.php");
-					$category = get_category();
-					print_r($category);
-					foreach ($category as $cat) {
-						echo "<tr>";
-						echo "<th>" . $cat["name"] . "</th>";
-						echo "<th><a class=\"button\" href=\"?content=category-edit&name=" . $cat["name"] . "\">edit</a></th>";
-						echo "<th><a class=\"button\" href=\"category_controller.php?method=delete&name=" . $cat["name"] . "\">delete</a></th>";
-						echo "</tr>";
-					}
-				?>
-				</table>
+				<form action="category_controller.php" method="post">
+				<label for="name">Old name:</label>
+				<input class="hidden" id="name" name="method" value="edit" type="text">
+				<input readonly id="oldname" name="old_name" type="text" value="<?php echo $_GET["name"]; ?>"><br>
+				<label for="name">New name:</label>
+				<input id="newname" name="new_name" type="text">
+				<input type="submit" value="Edit">
+				</form>
 			</div>
 			</div>
 			</div>
