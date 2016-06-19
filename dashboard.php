@@ -1,7 +1,10 @@
 <?php
-var_dump($_GET);
 // check login acl and shit
-
+session_start();
+print_r($_SESSION);
+if ($_SESSION["acl"] != 1) {
+	header("Location: index.php");
+}
 // Orders
 if ($_GET["content"] == "orders") {
 	include("views/dashboard/orders.php");
